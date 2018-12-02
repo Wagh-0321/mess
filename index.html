@@ -351,11 +351,12 @@ background-color: green;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
 <script>
-document.getElementById("id_print").innerHTML(new URLSearchParams(location.search).get('id'));
+
 $(document).ready(function(){
 $("#London2").hide();
 $("#offdiv").hide();
-
+	var text=new URLSearchParams(location.search).get('id');
+$("id_print").html(text);
 $("#btn2").click(function(){
 		$("#London").hide();
         $("#London2").show();
