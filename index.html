@@ -253,9 +253,9 @@ background-color: green;
 }
 </style>
 <body>
-<div class="header">Namo Mess</div>
+<div class="header">Namo Mess2</div>
 
-
+	<div id="id_print"></div>
 <div class="navbar">
 	<button id="btn1" onclick="openCity(event, 'Paris')">Home</button>
 
@@ -327,6 +327,8 @@ background-color: green;
 
   
 <script>
+	var sid=document.getElementById("id");
+	document.getElementById("id_print").innerHTML(sid);
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
