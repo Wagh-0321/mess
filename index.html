@@ -133,6 +133,16 @@ width:30%;
     display: none;
 }
 
+.tabcontent2 {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none;
+}
+
 /* Clear floats after the tab */
 .clearfix::after {
     content: "";
@@ -253,9 +263,10 @@ background-color: green;
 }
 </style>
 <body>
-<div class="header">Namo Mess</div>
+<div id="id_print"></div>
+<div class="header">Namo Mess2</div>
 
-	<div id="id_print"></div>
+
 <div class="navbar">
 	<button id="btn1" onclick="openCity(event, 'Paris')">Home</button>
 
@@ -286,9 +297,16 @@ background-color: green;
 <div class="diet">
 	<div class="diet1">Aditya Wagh</div>
     <div class="diet1">Diet Left: 45</div>
-    <div class="diet1"><button>Make Off</button>   Off Left : 3</div>
+    <div class="diet1"><button id="makeoff">Make Off</button>   Off Left : 3 diets</div>
 </div>
 
+<div id="offdiv">
+	<form  >
+    	<input type="number" max=3 min=1>
+        <input type="submit">
+    </form>
+    
+</div>
                                 
 
 <hr>
@@ -305,6 +323,12 @@ background-color: green;
   <div id="London" class="tabcontent">
     <h3>Monthly</h3>
     <p>Teri maa la</p>
+    <button id="btn2">Order</button>
+  </div>
+   <div id="London2" class="tabcontent">
+    <h3>Monthly2</h3>
+    <p>Teri maa la</p>
+    
   </div>
 
   <div id="Paris" class="tabcontent">
@@ -324,12 +348,25 @@ background-color: green;
   <div class="clearfix"></div>
 
      
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
 <script>
-	
-	
-	document.getElementById("id_print").innerHTML(new URLSearchParams(location.search).get('id'));
+document.getElementById("id_print").innerHTML(new URLSearchParams(location.search).get('id'));
+$(document).ready(function(){
+$("#London2").hide();
+$("#offdiv").hide();
+
+$("#btn2").click(function(){
+		$("#London").hide();
+        $("#London2").show();
+        
+    });
+$("#makeoff").click(function(){
+		$("#offdiv").toggle();
+        
+        
+    });
+});
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
