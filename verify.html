@@ -1,5 +1,5 @@
 <html>
-  Email Verification 
+  Email Verification :
 <input type="text" id="input">
 <button id="submit">Verify Now</button>
   <script src="https://wagh-0321.github.io/mess/param.js"></script>
@@ -10,7 +10,7 @@ $(document).ready(function(){
  
   $("#submit").click(function(){
     var input=document.getElementById("input").value;
-        var sid=getparam(id);
+        var sid=getparam("id");
     if(input==sid)
     {alert("true");
     }
